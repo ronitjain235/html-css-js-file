@@ -1,0 +1,549 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jain Groceries</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f4f8;
+        }
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .header .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .header .logo i {
+            color: #38a169;
+            margin-right: 0.5rem;
+        }
+        .header nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .header nav a {
+            color: #2d3748;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .header nav a:hover {
+            color: #38a169;
+        }
+        .header .icons {
+            display: flex;
+            gap: 1rem;
+        }
+        .header .icons i {
+            font-size: 1.5rem;
+            color: #2d3748;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .header .icons i:hover {
+            color: #38a169;
+        }
+       
+    .icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .icons i {
+        color: #333;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .icons i:hover {
+        color: #38a169;
+        transform: scale(1.2);
+    }
+
+    .search-bar {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .search-bar input {
+        width: 60%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .search-bar button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #38a169;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    .search-results {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+
+        .home {
+            background-image: url( 'image/22.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 2rem;
+        }
+        .home .content {
+            
+
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .home .content h3 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .home .content p {
+            font-weight: bold;
+            font-size: 2.5rem ;
+            margin-bottom: 2rem;
+            font-style: italic ;
+            
+        }
+        .home .content .btn {
+            background-color: #38a169;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+        }
+        .home .content .btn:hover {
+            background-color: #2f855a;
+        }
+        .features {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: #b9fc9e;
+        }
+        .features .heading {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .features .heading span {
+            color: #38a169;
+        }
+        .features .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .features .box {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .features .box img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        .features .box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .features .box p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .features .box .btn {
+            background-color: #38a169;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        .features .box .btn:hover {
+            background-color: #2f855a;
+        }
+        .sale {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-image: url('image/table.jpeg');
+        }
+        .sale .heading {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .sale .heading span {
+            color: #38a169;
+        }
+        .sale .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .sale table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .sale table th, .sale table td {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .sale table th {
+            background-color: #f7fafc;
+        }
+        .sale table tfoot td {
+            font-weight: bold;
+        }
+        .sale .cta-button {
+            background-color: #38a169;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .sale .cta-button:hover {
+            background-color: #2f855a;
+        }
+        .product {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: #b9fc9e;
+        }
+        .product .heading {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .product .heading span {
+            color: #38a169;
+        }
+        .product .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .product .card {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product .card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        .product .card .discount {
+            background-color: #38a169;
+            color: #fff;
+            padding: 0.25rem 0.5rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .product .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .product .card p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .product .card .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .product .card .price .mrp {
+            text-decoration: line-through;
+            color: #888;
+            margin-right: 0.5rem;
+        }
+        .product .card .add-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        .product .card .add-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo"><i class="fa fa-shopping-cart"></i>Jain Groceries</a>
+            <nav style="font-weight: bold ">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#product">Product</a>
+                <a href="#review">Review</a>
+                <a href="#aboutus">About Us</a>
+            </nav>
+            <div class="icons">
+                <!-- Search Icon with functionality -->
+                <i class="fa fa-search" onclick="toggleSearchBar()" title="Search"></i>
+            
+                <!-- Shopping Cart Icon -->
+                <i class="fa fa-shopping-cart" title="Shopping Cart"></i>
+            
+                <!-- User Icon -->
+                <i class="fa fa-user" title="User Account"></i>
+            </div>
+            
+            <!-- Hidden Search Bar -->
+            <div class="search-bar" id="searchBar" style="display: none;">
+                <input type="text" id="iconSearchInput" placeholder="Search for products..." onkeyup="performSearch()" />
+                <button type="button" onclick="performSearch()">Search</button>
+            </div>
+            
+            <div id="iconSearchResults" class="search-results">
+                <!-- Search results will appear here -->
+            </div>
+            
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="content">
+            <h3>"Fresh and organic fruits from Nature, Delivered to You!"</h3>
+            <p> Indulge in the taste of pure, organic goodness with our handpicked fruits and vegetables  straight from farm to your doorstep for a healthier, happier you!"</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </section>
+    <section class="features" id="features">
+        <h1 class="heading">Our <span>Features</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="https://storage.googleapis.com/a1aa/image/okxHKDNi9y43G1L8uihx1eZ6xkGk1MAseC4vxmUfebKBJxkPB.jpg" alt="Fresh and organic vegetables">
+                <h3>Fresh and Organic</h3>
+                <p>Organic vegetables are fresh & chemical-free produces. They are harvested in a natural process with fresh produce free of synthetic chemicals or pesticides.</p>
+                <a href="#" class="btn">Read more</a>
+            </div>
+            <div class="box">
+                <img src="https://storage.googleapis.com/a1aa/image/XatLSNTc1yrSOVezXgB7dQw3hZ1uBj6b7tiXd0wKo2gGJm8JA.jpg" alt="Fast delivery service">
+                <h3>Fast Delivery</h3>
+                <p>Speeding up your deliveries, one package at a time. Same day delivery at your doorstep.</p>
+                <a href="#" class="btn">Read more</a>
+            </div>
+            <div class="box">
+                <img src="https://storage.googleapis.com/a1aa/image/1lCfy6fK7HvEWk5P1MuZE0nO7OGTlLKRjwawdzGipgiSSM5TA.jpg" alt="Easy payment options">
+                <h3>Easy to Pay</h3>
+                <p>Multiple payment options to suit your needs. Your payment is 100% secure and encrypted.</p>
+                <a href="#" class="btn">Read more</a>
+            </div>
+        </div>
+    </section>
+    <section class="sale">
+        <h1 class="heading">Our <span>Sale</span></h1>
+        <div class="container">
+            <div class="headering">
+                <h1>GROCERY AT <span>WHOLESALE PRICES</span></h1>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>MRP</th>
+                        <th>Jain Grocery Price</th>
+                        <th>Other Retail Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>500 g Saffola Immuniveda</td>
+                        <td>₹275</td>
+                        <td class="text-green-600 font-bold">₹171</td>
+                        <td>₹191</td>
+                    </tr>
+                    <tr>
+                        <td>1000 g Santoor by Wipro Skin</td>
+                        <td>₹444</td>
+                        <td class="text-green-600 font-bold">₹298</td>
+                        <td>₹311</td>
+                    </tr>
+                    <tr>
+                        <td>4 kg Ariel Complete Deterg</td>
+                        <td>₹1600</td>
+                        <td class="text-green-600 font-bold">₹638</td>
+                        <td>₹655</td>
+                    </tr>
+                    <tr>
+                        <td>2 kg Tata Sampann Yellow</td>
+                        <td>₹598</td>
+                        <td class="text-green-600 font-bold">₹419</td>
+                        <td>₹443</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Your bill</td>
+                        <td>₹2917</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Extra Savings</td>
+                        <td class="text-red-600">₹1391</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <a href="#" class="cta-button">Get these products ➡</a>
+        </div>
+    </section>
+    <section class="product" id="product">
+        <h1 class="heading">Our <span>Product</span></h1>
+        <div class="container">
+            <div class="card">
+                <div class="discount">28% off</div>
+                <img src="https://storage.googleapis.com/a1aa/image/c88A6fIPZP3pCqnq7oUYXfyIxr7fjY5htr3eGK7YJg5oIxkPB.jpg" alt="Saffola Oats - Rolled Oats, Delicious Creamy Oats, High Protein & Fibre, Healthy Cereal">
+                <h2>Saffola</h2>
+                <p>Rolled Oats, Delicious Creamy Oats, High Protein & Fibre, Healthy Cereal</p>
+                <p class="price"><span class="mrp">MRP 185</span> ₹133</p>
+                <a href="#" class="add-btn">Add</a>
+            </div>
+            <div class="card">
+                <div class="discount">28% off</div>
+                <img src="https://storage.googleapis.com/a1aa/image/HI9yf4x4VFXsK6fFZ8K4tc8dCRl8kf0wnL9eMCL2P8kfRiJfE.jpg" alt="Fortune Soya Chunks">
+                <h2>Fortune</h2>
+                <p>Soya chunks</p>
+                <p class="price"><span class="mrp">MRP 180</span> ₹128</p>
+                <a href="#" class="add-btn">Add</a>
+            </div>
+            <div class="card">
+                <div class="discount">18% off</div>
+                <img src="https://storage.googleapis.com/a1aa/image/gpahc57YeNU5aa2vbfxd98DB2D9PsNgi6UkWN8HFcDUOSM5TA.jpg" alt="TESCO Corn flakes">
+                <h2>TESCO</h2>
+                <p>Corn flakes</p>
+                <p class="price"><span class="mrp">MRP 500</span> ₹250</p>
+                <a href="#" class="add-btn">Add</a>
+            </div>
+            <div class="card">
+                <div class="discount">68% off</div>
+                <img src="https://storage.googleapis.com/a1aa/image/ZmSscQYs0MbLARj1D7CfMTTsOKzOZQLCDotXEqPhUeKMSM5TA.jpg" alt="PRINGLES TEXAS BBQ SAUCE">
+                <h2>PRINGLES</h2>
+                <p>TEXAS BBQ SAUCE</p>
+                <p class="price"><span class="mrp">MRP 250</span> ₹125</p>
+                <a href="#" class="add-btn">Add</a>
+            </div>
+            <div class="card">
+                <div class="discount">50% off</div>
+                <img src="C:\Users\Dell\Desktop\iwt\frant\index.html\maggi.jpeg" alt=" Maggi">
+                <h2>MAGGI</h2>
+                <p> 2 min noodles  </p>
+                <p class="price"><span class="mrp">MRP 50</span> ₹25</p>
+                <a href="#" class="add-btn">Add</a>
+            </div>
+            <div class="card">
+                <div class="discount">8% off</div>
+                <img src="C:\Users\Dell\Desktop\iwt\frant\index.html\apple.jpeg" alt="apple">
+                <h2>APPLE</h2>
+                <p> apple </p>
+                <p class="price"><span class="mrp">MRP 150</span> ₹125</p>
+                <a href="#" class="add-btn">Add</a>
+            </div>
+           
+          
+            
+    </section>
+    <script>
+      
+    // Sample product data for search
+    
+
+    // Toggle search bar visibility when the search icon is clicked
+    function toggleSearchBar() {
+        const searchBar = document.getElementById("searchBar");
+        // Toggle search bar visibility (show or hide
+        searchBar.style.display = searchBar.style.display === "none" ? "block" : "none";
+    }
+
+    // Perform search functionality as user types
+    function performSearch() {
+        const searchInput = document.getElementById("iconSearchInput").value.toLowerCase();
+        const searchResults = document.getElementById("iconSearchResults");
+
+        // Clear previous search results
+        searchResults.innerHTML = "";
+
+        // Filter products based on input text
+        const filteredProducts = products.filter(product =>
+            product.toLowerCase().includes(searchInput)
+        );
+
+        // Display results or a message if no products are found
+        if (filteredProducts.length > 0) {
+            filteredProducts.forEach(product => {
+                const p = document.createElement("p");
+                p.textContent = product;
+                searchResults.appendChild(p);
+            });
+        } else {
+            searchResults.innerHTML = "<p>No results found.</p>";
+        }
+    }
+</script>
+
+   
+        <footer style="background-color: #2d3748; color: #fff; text-align: center; padding: 1.5rem 0;">
+            <p>&copy; 2024 Jain Groceries. All rights reserved.</p>
+            <p>Follow us on 
+                <a href="#" style="color: #38a169; text-decoration: none;">Facebook</a>, 
+                <a href="#" style="color: #38a169; text-decoration: none;">Instagram</a>, and 
+                <a href="#" style="color: #38a169; text-decoration: none;">Twitter</a>.
+            </p>
+        </footer>
+    
+</body>
+</html>
